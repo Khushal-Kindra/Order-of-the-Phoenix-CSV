@@ -43,7 +43,7 @@ my_project/
 ├── requirements.txt  
 ├── data_processing.py  
 └── tests/  
-    └── test_data_processing.py  
+    └── testing.py  
 ~~~
 
 ## Application Files
@@ -52,7 +52,7 @@ The application consists of three main Python files:
 
 1. `main.py`: Entry point of the application that reads the CSV file, processes the data, and computes the metrics.
 2. `data_processing.py`: Contains the `process_data` function to clean and preprocess the data.
-3. `test_data_processing.py`: Unit tests for the data processing functions.
+3. `testing.py`: Unit tests for the data processing functions.
 
 ## Dockerization
 
