@@ -6,11 +6,12 @@ This repository contains a Python application to process orders from a CSV file.
 
 1. [Introduction](#introduction)
 2. [Generating the Orders CSV](#generating-the-orders-csv)
-3. [Application Files](#application-files)
-4. [Dockerization](#dockerization)
-5. [Running the Application](#running-the-application)
-6. [Running the Tests](#running-the-tests)
-7. [License](#license)
+3. [Project Directory](#project-directory)
+4. [Application Files](#application-files)
+5. [Dockerization](#dockerization)
+6. [Running the Application](#running-the-application)
+7. [Running the Tests](#running-the-tests)
+8. [License](#license)
 
 ## Introduction
 
@@ -30,6 +31,21 @@ The `orders.csv` file can be generated using Mockaroo, a free online tool for ge
 
 Save the generated file as `orders.csv`.
 
+## Project Directory
+
+Your project directory should look like this:
+~~~
+my_project/  
+│  
+├── Dockerfile  
+├── docker-compose.yml  
+├── main.py  
+├── requirements.txt  
+├── data_processing.py  
+└── tests/  
+    └── test_data_processing.py  
+~~~
+
 ## Application Files
 
 The application consists of three main Python files:
@@ -40,7 +56,7 @@ The application consists of three main Python files:
 
 ## Dockerization
 
-To containerize the application, we will create a Dockerfile and a `docker-compose.yml` file.
+To containerize the application, we will create a `Dockerfile` and a `docker-compose.yml` file.
 
 ## Build the Docker images:
 
