@@ -1,4 +1,4 @@
-# Order of the Phoneix CSV
+# Order of the Phoenix CSV
 
 This repository contains a Python application to process orders from a CSV file. The application computes various metrics from the order data and includes a separate testing module. The application and tests are containerized using Docker.
 
@@ -50,9 +50,46 @@ my_project/
 
 The application consists of three main Python files:
 
-1. `main.py`: Entry point of the application that reads the CSV file, processes the data, and computes the metrics.
-2. `data_processing.py`: Contains the `process_data` function to clean and preprocess the data.
-3. `testing.py`: Unit tests for the data processing functions.
+`main.py`
+`data_processing.py`
+`testing.py`
+
+### Files Description
+
+`main.py`
+
+This is the main script that orchestrates the data reading, processing, and analysis. It includes the following components:
+
+### Functions:
+
+- read_csv_file(file_path): Reads a CSV file into a Pandas DataFrame, handling errors if the file does not exist or cannot be read.
+- compute_metrics(df): Computes and prints various metrics from the DataFrame, such as monthly revenue, product revenue, customer revenue, and top customers by revenue.
+
+### Main Function:
+
+main(): The main function that sets the file path for the CSV file, reads the data, processes it using the process_data function from data_processing.py, and computes metrics. It serves as the entry point for the script.
+
+`data_processing.py`
+
+This module handles the data cleaning and preprocessing tasks. It includes the process_data(df) function, which performs the following operations on the DataFrame:
+
+- Drops rows with missing values in critical columns (order_id, customer_id, product_id).
+- Converts order_date to a datetime format, filling any missing or erroneous dates with a default value.
+- Fills missing product_name values with 'Unknown'.
+- Converts product_price to float, fills missing values with the mean price, and ensures no negative prices.
+- Converts quantity to float, fills missing values with the median quantity, ensures no negative quantities, and converts back to integer.
+- Adds a year_month column for grouping by month.
+
+`testing.py`
+
+This module contains unit tests for the data processing functionality using the unittest framework. It includes the following:
+
+### Test Class:
+
+- TestDataProcessing: Contains test cases for the process_data function.
+- setUp(): Sets up a sample DataFrame from a CSV string for testing.
+- test_process_data(): Tests various aspects of the process_data function, including handling of missing values, data type conversions, and the addition of the year_month 
+    column. It includes assertions to verify that the processed DataFrame meets the expected criteria.
 
 ## Dockerization
 
@@ -61,6 +98,8 @@ To containerize the application, we will create a `Dockerfile` and a `docker-com
 ## Build the Docker images:
 
   docker-compose build
+  
+A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files.
 
 ## Running the Application
   
