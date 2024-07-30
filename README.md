@@ -12,6 +12,7 @@ This repository contains a Python application to process orders from a CSV file.
 6. [Running the Application](#running-the-application)
 7. [Running the Tests](#running-the-tests)
 8. [License](#license)
+9. [Demo Video](#demo-video)
 
 ## Introduction
 
@@ -113,3 +114,6 @@ A Docker image is a lightweight, standalone, and executable package that include
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+## Demo Video
+
+https://github.com/user-attachments/assets/cf50d45e-d894-4188-8cb4-c3a897559646
